@@ -1,1 +1,14 @@
-node_modules
+# Terraform
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+crash.log
+*.tfvars
+*.tfvars.json
+.terraform.lock.hcl
+
+# Node / Docker / misc
+node_modules/
+dist/
+build/
+.DS_Store

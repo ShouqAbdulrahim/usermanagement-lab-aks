@@ -1,4 +1,4 @@
-# 🚀 Lab 8 — Deploy a Three-Tier App on Azure Kubernetes Service (AKS)
+# 🚀 Lab 8-10 — Deploy a Three-Tier App on Azure Kubernetes Service (AKS)
 
 This lab demonstrates how to containerize and deploy a **three-tier application** (UI → API → Database) on **Azure Kubernetes Service (AKS)** using Kubernetes manifests.
 

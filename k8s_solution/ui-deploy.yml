@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-deploy
+  namespace: user-management
+  labels:
+    app: frontend-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontend-app
+  template:
+    metadata:
+      labels:
+        app: frontend-app
+    spec:
+      containers:
+        - name: frontend-app
+          image: shouqds/frontend-user-management:latest
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - name: ui-config
+              mountPath: /usr/share/nginx/html/config.json
+              subPath: config.json
+      volumes:
+        - name: ui-config
+          configMap:
+            name: frontend-configmap
+            items:
+              - key: config.json
+                path: config.json

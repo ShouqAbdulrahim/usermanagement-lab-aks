@@ -1,44 +1,34 @@
-# User Management Service
+# 🚀 Lab 8 — Deploy a Three-Tier App on Azure Kubernetes Service (AKS)
 
-This repository contains a 3-tier web application for managing users with a frontend, backend API, and database layer, hosted using Docker!
+This lab demonstrates how to containerize and deploy a **three-tier application** (UI → API → Database) on **Azure Kubernetes Service (AKS)** using Kubernetes manifests.
 
-## Project Structure
+---
 
-```
-|-- UI/           # Frontend - Web Application (HTML, CSS, JavaScript)
-|-- api/          # Backend - Node.js Application
-|-- README.md     # Documentation
-```
+## 🧱 Architecture Overview
 
-## Components
+**Stack:**
+- 🗄 **PostgreSQL** → Database (internal)
+- ⚙️ **Node.js API** → Backend (public)
+- 🎨 **NGINX** → Frontend (public)
 
-### 1. Frontend (UI)
-- Developed using HTML, CSS, and JavaScript.
-- User management interface with CRUD operations.
-- Served using Nginx.
+**Flow:**  
+`UI (NGINX)` → `API (Node.js)` → `DB (PostgreSQL)`
 
-### 2. Backend API
-- A Node.js application providing backend functionality.
-- Exposes RESTful endpoints for user management operations.
-- Handles CRUD operations for user data.
+**Namespace:** `user-management`
 
-### 3. Database
-- Uses Postgres Database for user data storage.
-- Stores user information including name, email, age, and address.
+---
 
-### 4. Networking & Security
-- Use Default Docker Bridge Network
+## ⚙️ Prerequisites
 
-## Solution
+✅ Azure Kubernetes Service (AKS) cluster  
+✅ `kubectl` connected to the cluster  
+✅ Docker Hub or Azure Container Registry account  
+✅ Git + CLI tools installed  
 
-Added three files
+---
 
-1. api/Dockerfile
-2. ui/Dockerfile
-3. docker-compose.yml
+## 🧩 1. Clone the Repository
 
-Execute the following code to start the application
-
-```
-docker-compose.yml
-```
+```bash
+git clone https://github.com/saurabhd2106/usermanagement-lab-ih.git
+cd usermanagement-lab-ih

@@ -2,12 +2,12 @@
 **/.terraform/*
 *.tfstate
 *.tfstate.*
+.terraform.lock.hcl
 crash.log
 *.tfvars
 *.tfvars.json
-.terraform.lock.hcl
 
-# Node / Docker / misc
+# Node / build / macOS
 node_modules/
 dist/
 build/

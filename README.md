@@ -32,3 +32,34 @@ This lab demonstrates how to containerize and deploy a **three-tier application*
 ```bash
 git clone https://github.com/saurabhd2106/usermanagement-lab-ih.git
 cd usermanagement-lab-ih
+
+
+
+# 💾 Lab 10 — Persist Your Data with PV & PVC on AKS
+
+This lab extends the previous AKS three-tier application (Postgres → API → Frontend + Ingress) by adding **data persistence** using a **PersistentVolume (PV)** and **PersistentVolumeClaim (PVC)** backed by an **Azure Managed Disk**.
+
+---
+
+## 🎯 Objective
+Right now, if the Postgres Pod dies, all data is lost.  
+In this lab, you’ll attach durable storage so data survives Pod restarts and redeployments.
+
+---
+
+## 🧰 Requirements
+
+✅ AKS Cluster with `kubectl` access  
+✅ Terraform + Azure CLI installed  
+✅ Helm (Ingress controller already installed from previous lab)  
+✅ Namespace: `user-management`  
+✅ Working three-tier app (Postgres, API, Frontend, Ingress)
+
+---
+
+## 🗂️ 0) (Optional) Clean Start
+
+If you want to start fresh:
+```bash
+kubectl delete all --all -n user-management --ignore-not-found
+kubectl get ns user-management || kubectl create ns user-management

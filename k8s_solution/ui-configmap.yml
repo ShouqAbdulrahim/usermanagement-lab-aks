@@ -5,4 +5,4 @@ metadata:
   namespace: user-management
 data:
   config.json: |
-    { "API_URL": "http://57.153.162.166" }
+    { "API_URL": "http://172.199.112.97" }
